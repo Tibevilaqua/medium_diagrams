@@ -1,0 +1,36 @@
+@startuml
+
+package "Front-end" {
+  [First layer (Web Pages)]
+}
+
+package "Front-end customer 1" {
+  [Customer 1 (Web Pages)]
+}
+
+package "Front-end customer 2" {
+  [Customer 2 (Web Pages)]
+}
+
+package "Front-end customer N" {
+  [Customer N (Web Pages)]
+}
+
+
+package "Engine" {
+  [Second layer (Application) SaveDog]
+  [Second layer (Application) TakeDog]
+}
+
+database "NoSQL" {
+    [Third layer (Database)]
+}
+
+[First layer (Web Pages)] ..> [Second layer (Application) TakeDog] : HTTP (Rest)
+[Customer 1 (Web Pages)] ..> [Second layer (Application) TakeDog] : HTTP (Rest)
+[Customer 2 (Web Pages)] ..> [Second layer (Application) TakeDog] : HTTP (Rest)
+[Customer N (Web Pages)] ..> [Second layer (Application) TakeDog] : HTTP (Rest)
+
+[Second layer (Application) TakeDog] ..> [Third layer (Database)] : Database Driver
+
+@enduml

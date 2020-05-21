@@ -1,0 +1,32 @@
+@startuml
+
+package "Dog Classes/Files" {
+   [canTakeDog(dogsName, dogParkAddress)]
+   [canTakeDog(dogsName, dogParkAddress) ]
+   [canTakeDog(dogsName, dogParkAddress)  ]
+   [canTakeDog(dogsName, dogParkAddress)   ]
+   [canTakeDog(dogsName, dogParkAddress)    ]
+   [canTakeDog(dogsName, dogParkAddress)     ]
+   [canTakeDog(dogsName, dogParkAddress)      ]
+   [canTakeDog(dogsName, dogParkAddress)       ]
+   [canTakeDog(dogsName, dogParkAddress)        ]
+   [canTakeDog(dogsName, dogParkAddress)         ]
+   [canTakeDog(dogsName, dogParkAddress)          ]
+   [canTakeDog(dogsName, dogParkAddress)           ]
+   [canTakeDog(dogsName, dogParkAddress)            ]
+   [canTakeDog(dogsName, dogParkAddress)             ]
+   [canTakeDog(dogsName, dogParkAddress)              ]
+   [canTakeDog(dogsName, dogParkAddress)               ]
+   [canTakeDog(dogsName, dogParkAddress)                ]
+   [canTakeDog(dogsName, dogParkAddress)                 ]
+   [canTakeDog(dogsName, dogParkAddress)                  ]
+   [canTakeDog(dogsName, dogParkAddress)                   ]
+   [canTakeDog(dogsName, dogParkAddress)                    ]
+   [canTakeDog(dogsName, dogParkAddress)                     ]
+   [canTakeDog(dogsName, dogParkAddress)                      ]
+   [canTakeDog(dogsName, dogParkAddress)                       ]
+   [canTakeDog(dogsName, dogParkAddress)                        ]
+   [canTakeDog(dogsName, dogParkAddress)                         ]
+   [canTakeDog(dogsName, dogParkAddress)                          ]
+}
+@enduml

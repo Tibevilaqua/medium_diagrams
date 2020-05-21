@@ -1,0 +1,34 @@
+@startuml
+
+package "Front-end" {
+  [First layer (Web Pages)]
+}
+
+package "Front-end customer 1" {
+  [Customer 1 (Web Pages)]
+}
+
+package "Front-end customer 2" {
+  [Customer 2 (Web Pages)]
+}
+
+package "Front-end customer N" {
+  [Customer N (Web Pages)]
+}
+
+package "Engine" {
+  [Second layer (Application)]
+}
+
+database "NoSQL" {
+    [Third layer (Database)]
+}
+
+[First layer (Web Pages)] ..> [Second layer (Application)] : HTTP (Rest)
+[Customer 1 (Web Pages)] ..> [Second layer (Application)] : HTTP (Rest)
+[Customer 2 (Web Pages)] ..> [Second layer (Application)] : HTTP (Rest)
+[Customer N (Web Pages)] ..> [Second layer (Application)] : HTTP (Rest)
+
+[Second layer (Application)] ..> [Third layer (Database)] : Database Driver
+
+@enduml

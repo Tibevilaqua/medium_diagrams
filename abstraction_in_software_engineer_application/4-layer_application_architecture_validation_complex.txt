@@ -1,0 +1,20 @@
+@startuml
+
+
+box "Application" #Wheat
+collections Controller
+collections Utilities
+end box
+
+
+== Save Dog ==
+Controller -> Utilities : validate(name)
+Controller -> Utilities : validate(breed, UTILITIES.mustBeAcceptableBreed)
+Controller -> Utilities : validate(ownerEmail, UTILITIES.mustContainAt)
+
+== Take Dog ==
+Controller -> Utilities : validate(personsName)
+Controller -> Utilities : validate(dogsName)
+Controller -> Utilities : validate(dogParkAddress)
+
+@enduml

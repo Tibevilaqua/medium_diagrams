@@ -1,0 +1,16 @@
+@startuml
+
+package "Test Scripts" {
+  [Tests]
+}
+
+package "Application to be tested" {
+  [Application]
+}
+
+package "Third-party systems" {
+  [EmailValidator]
+  [DogParkValidator]
+}
+
+@enduml

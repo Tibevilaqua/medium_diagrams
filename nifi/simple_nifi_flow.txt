@@ -1,0 +1,16 @@
+@startuml
+
+box "External server" #LightGreen
+    entity source
+end box
+
+box "Nifi linux box" #CornSilk
+	collections Nifi
+	database Filesystem
+end box
+
+source -> Nifi : Send messages via TCP
+Nifi -> Nifi : Filter messages
+Nifi -> Filesystem : Write to filesystem
+
+@enduml

@@ -1,0 +1,29 @@
+@startuml
+
+box "External Income Requests" #CornFlowerBlue
+actor Customer
+end box
+
+box "Application" #Wheat
+collections Controller
+collections Application
+collections Repository
+collections Utilities
+end box
+
+box "External outcome requests" #CornFlowerBlue
+database Database
+boundary DogParkValidator
+end box
+
+
+== Take Dog ==
+Customer -> Controller : Take Dog
+Controller -> Utilities : Validate Parameters (personsName, dogsName, dogParkAddress)
+Controller -> Application : Validate if Dog can be taken to dog park(dogsName, dogParkAddress)
+Controller -> Application : Take Dog
+Application -> Repository : validate DogPark
+Repository -> DogParkValidator : Does dog park exist?
+Repository -> Database : Take Dog
+
+@enduml

@@ -1,0 +1,26 @@
+@startuml
+
+box "External Income Requests" #CornFlowerBlue
+actor Customer
+end box
+
+box "Application" #Black
+collections "?"
+end box
+
+box "External outcome requests" #CornFlowerBlue
+database Database
+end box
+
+
+== Save Dog ==
+Customer -> "?" : Save dog
+
+"?" -> Database :
+
+== Take Dog ==
+Customer -> "?" : Take Dog
+"?" -> Database :
+
+
+@enduml

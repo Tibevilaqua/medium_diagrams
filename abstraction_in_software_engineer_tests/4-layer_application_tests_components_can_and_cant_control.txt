@@ -1,0 +1,16 @@
+@startuml
+
+package "Test Scripts" {
+  [Tests] #LightGreen
+}
+
+package "Application to be tested" {
+  [Application] #LightGreen
+}
+
+package "Third-party systems" {
+  [EmailValidator] #Red
+  [DogParkValidator] #Red
+}
+
+@enduml

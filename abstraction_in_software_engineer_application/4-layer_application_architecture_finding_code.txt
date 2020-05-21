@@ -1,0 +1,16 @@
+@startuml
+
+box "Application" #Wheat
+collections Repository
+end box
+
+box "External outcome requests" #CornFlowerBlue
+boundary EmailValidator
+end box
+
+
+== Save Dog ==
+Repository -> EmailValidator : Is email valid?
+
+
+@enduml

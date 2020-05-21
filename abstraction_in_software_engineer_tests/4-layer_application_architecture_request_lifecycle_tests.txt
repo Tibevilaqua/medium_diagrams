@@ -1,0 +1,53 @@
+@startuml
+
+box "External Income Requests" #CornFlowerBlue
+actor Customer
+end box
+
+box "Application" #Wheat
+collections Controller
+collections Application
+collections Repository
+collections Utilities
+end box
+
+box "External outcome requests" #CornFlowerBlue
+database Database
+boundary EmailValidator
+boundary DogParkValidator
+end box
+
+
+== Save Dog ==
+Customer -> Controller : Save dog
+Note left: 2 tests
+Controller -> Utilities : Validate Parameters (name, breed, ownerEmail)
+Note left: 6 tests
+Controller -> Application : Save Dog
+Note left: 2 tests
+Application -> Application : Validates any business logic. i.e does breed exist)?
+Note left: 2 tests depending on how complex the validations are
+Application -> Repository : validate email
+Note left: 2 tests
+Repository -> EmailValidator : Is email valid?
+Note left: 2 tests
+Application -> Repository : Save Dog
+Note left: 2 tests
+Repository -> Database : Save Dog
+Note left: 2 tests
+
+== Take Dog ==
+Customer -> Controller : Take Dog
+Note left: 2 tests
+Controller -> Utilities : Validate Parameters (personsName, dogsName, dogParkAddress)
+Note left: 6 tests
+Controller -> Application : Take Dog
+Note left: 2 tests
+Application -> Repository : validate DogPark
+Note left: 2 tests
+Repository -> DogParkValidator : Does dog park exist?
+Note left: 2 tests
+Repository -> Database : Take Dog
+Note left: 2 tests
+
+@enduml

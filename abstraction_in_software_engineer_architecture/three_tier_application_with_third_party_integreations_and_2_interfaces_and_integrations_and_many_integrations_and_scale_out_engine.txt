@@ -1,0 +1,74 @@
+@startuml
+
+package "Front-end" {
+  [First layer (Web Pages)]
+}
+
+package "Front-end customer 1" {
+  [Customer 1 (Web Pages)]
+}
+
+package "Front-end customer 2" {
+  [Customer 2 (Web Pages)]
+}
+
+package "Front-end customer 3" {
+  [Customer 3 (Web Pages)]
+}
+
+package "Front-end customer 4" {
+  [Customer 4 (Web Pages)]
+}
+
+package "Front-end customer 5" {
+  [Customer 5 (Web Pages)]
+}
+
+package "Front-end customer 6" {
+  [Customer 6 (Web Pages)]
+}
+
+
+package "Front-end customer N" {
+  [Customer N (Web Pages)]
+}
+
+
+package "Engine" {
+  [Second layer 1 (Application) SaveDog]
+  [Second layer 1 (Application) TakeDog]
+}
+
+package "Engine2" {
+  [Second layer 2 (Application) SaveDog]
+  [Second layer 2 (Application) TakeDog]
+}
+
+package "Engine3" {
+  [Second layer 3 (Application) SaveDog]
+  [Second layer 3 (Application) TakeDog]
+}
+
+
+
+database "NoSQL" {
+    [Third layer (Database)]
+}
+
+[First layer (Web Pages)] ..> [Second layer 1 (Application) TakeDog] : HTTP (Rest)
+[Customer 1 (Web Pages)] ..> [Second layer 1 (Application) TakeDog] : HTTP (Rest)
+[Customer 2 (Web Pages)] ..> [Second layer 1 (Application) TakeDog] : HTTP (Rest)
+[Customer 2 (Web Pages)] ..> [Second layer 1 (Application) SaveDog] : HTTP (Rest)
+[Customer 3 (Web Pages)] ..> [Second layer 2 (Application) TakeDog] : HTTP (Rest)
+[Customer 4 (Web Pages)] ..> [Second layer 2 (Application) TakeDog] : HTTP (Rest)
+[Customer 5 (Web Pages)] ..> [Second layer 2 (Application) TakeDog] : HTTP (Rest)
+[Customer 5 (Web Pages)] ..> [Second layer 3 (Application) SaveDog] : HTTP (Rest)
+[Customer 6 (Web Pages)] ..> [Second layer 3 (Application) TakeDog] : HTTP (Rest)
+[Customer N (Web Pages)] ..> [Second layer 3 (Application) TakeDog] : HTTP (Rest)
+[Customer N (Web Pages)] ..> [Second layer 3 (Application) SaveDog] : HTTP (Rest)
+
+[Second layer 1 (Application) TakeDog] ..> [Third layer (Database)] : Database Driver
+[Second layer 2 (Application) SaveDog] ..> [Third layer (Database)] : Database Driver
+[Second layer 3 (Application) SaveDog] ..> [Third layer (Database)] : Database Driver
+
+@enduml
